@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# delta-ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Delta-UI is a versatile React components library that offers a seamless user experience with support for both light and dark modes. This lightweight and minimalistic library is designed to enhance the visual appeal and functionality of your React applications. It provides a curated collection of reusable and customizable components, making it easy to integrate Delta-UI into any React project.
 
-Currently, two official plugins are available:
+**Key Features**:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-**Light and Dark Mode Ready**: Delta-UI is optimized for both light and dark modes, ensuring an exceptional visual experience for users in any lighting condition.
 
-## Expanding the ESLint configuration
+-**Lightweight and Performant**: With a minimal footprint, Delta-UI prioritizes performance, ensuring quick loading times and smooth interactions for enhanced user satisfaction.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-**Customizable Components**: Each component in Delta-UI is designed to be easily customizable, allowing developers to adapt the library to match the specific look and feel of their application.
 
-- Configure the top-level `parserOptions` property like this:
+-**Responsive Design**: The components in Delta-UI are responsive, ensuring a consistent user experience across various screen sizes and devices.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Whether you're working on a personal project or a professional application, Delta-UI provides the perfect toolkit for developers seeking a lightweight, minimalistic, and mode-flexible React components library that effortlessly elevates the user experience.
+
+### Installation
+```
+npm i diego-react-delta-ui
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
+### Usage
+At your index.ts:
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+import 'diego-react-delta-ui/dist/style.css';
 ```
+
+At some high point of your application:
+```js
+import { ThemeProvider } 'diego-react-delta-ui';
+
+const App = () => (
+  // theme: 'Dark' | 'Light'
+  <ThemeProvider theme={theme}>
+    <Main />
+  </div>
+);
+```
+
+And that's it, now just import and use the components:
+```js
+import { Button } 'diego-react-delta-ui';
+
+const App = () => (
+  <div>
+    <Button {...props}>Click me</Button>
+  </div>
+);
+```
+
+[Storybook](https://diego-delta-ui.vercel.app/?path=/docs/deltaui-accordion--docs)
